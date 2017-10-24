@@ -1,0 +1,3 @@
+c      Input values....
+      double precision param1 ,param2 
+      common /USR_PARAM/  param1 ,param2 
