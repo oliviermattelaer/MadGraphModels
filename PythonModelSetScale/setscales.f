@@ -44,7 +44,7 @@ c
 c
 c     Modifed DG
 c
-      real*8 gm, shat, betam, gbeta, ee, Pi
+      real*8 gm, shat, betam, gbeta, ee, Pi, MMASS
 
       parameter( Pi = 3.14159265358979323846d0 )
 c
@@ -64,6 +64,21 @@ c----------
 c     start
 c----------
       rscale=0d0
+      MMASS=1.0d3
+      
+      alpha = 1d0/1.37d2
+      print *,'alpha',alpha
+      
+      gm = dsqrt(Pi/alpha)
+      
+      write(*,*)'P(0,1),P(0,2)', P(0,1),P(0,2)
+      shat = 2d0*dot(P(0,1),P(0,2))
+      print *,'MMASS', MMASS
+      betam = dsqrt(1d0 - 4d0*MMASS*MMASS/shat)
+      gbeta = gm*betam 
+      
+      
+      
       
       if (dynamical_scale_choice.eq.-1) then
 c         Cluster external states until reducing the system to a 2->2 topology whose transverse mass is used for setting the scale.
@@ -104,9 +119,11 @@ cc      to use this code you must set                                           
 cc                 dynamical_scale_choice = 0                                    cc
 cc      in the run_card (run_card.dat)                                           cc
 ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-         write(*,*) "User-defined scale not set"
-         stop 21
-         rscale = 0
+         GCH(1) = dcmplx(gbeta, 0d0)
+         GCH(2) = dcmplx(gbeta, 0d0)
+c         write(*,*) "User-defined scale not set"
+c         stop 21
+c         rscale = 0
 ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 cc      USER-DEFINED SCALE: END OF USER CODE                                     cc
 ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
@@ -165,9 +182,11 @@ cc      to use this code you need to set                                        
 cc                 dymamical_scale_choice to 0 in the run_card                   cc
 ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 c         default: use the renormalization scale
-          call set_ren_scale(P,q2factorization(1))
-          q2factorization(1)=q2factorization(1)**2
-          q2factorization(2)=q2factorization(1)   !factorization scale**2 for pdf2
+          q2factorization(1)=0d0          !factorization scale**2 for pdf1
+          
+c          call set_ren_scale(P,q2factorization(1))
+c          q2factorization(1)=q2factorization(1)**2
+c          q2factorization(2)=q2factorization(1)   !factorization scale**2 for pdf2
 
 c
 c-some examples of dynamical scales
