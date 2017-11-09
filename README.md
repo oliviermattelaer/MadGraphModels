@@ -43,7 +43,7 @@ https://github.com/asantra/MadGraphModels/blob/master/mono_spinhalf_beta/paramet
 d. The vertices are defined in vertices.py:
 https://github.com/asantra/MadGraphModels/blob/master/mono_spinhalf_beta/vertices.py#L930
 
-e. The lorentz structure (with velocity = sqrt(1 – 4*mass^2/s) where s is square of COM (EDIT: THIS IS A MISTAKE, s IS mANDELSTAM VARIABLE, NOT COM. HENCE s IS NOT CONSTANT ALWAYS)) is defined in lorentz.py:
+e. The lorentz structure (with velocity = sqrt(1 – 4*mass^2/s) where s is square of COM (EDIT: THIS IS A MISTAKE, s IS MANDELSTAM VARIABLE, NOT COM. HENCE s IS NOT CONSTANT ALWAYS)) is defined in lorentz.py:
 https://github.com/asantra/MadGraphModels/blob/master/mono_spinhalf_beta/lorentz.py#L54
 
 f. The coupling order is defined in couplings.py:
