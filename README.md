@@ -60,6 +60,8 @@ https://github.com/asantra/MadGraphModels/blob/master/PythonModelSetScale/setsca
 
 A quick walk through of the setscales.f:
 –-----------
+
+
 a. defined the coupling:
 https://github.com/asantra/MadGraphModels/blob/master/PythonModelSetScale/setscales.f#L72
 
