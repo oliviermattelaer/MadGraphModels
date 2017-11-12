@@ -236,7 +236,7 @@ WTau = Parameter(name = 'WTau',
 GCH = Parameter(name = 'GCH',
                   nature = 'external',
                   type = 'real',
-                  value = 1.016,
+                  value = 1.0,
                   texname = '\\text{GCH}',
                   lhablock = 'GCH',
                   lhacode = [ 1 ])

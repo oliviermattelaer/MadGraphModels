@@ -45,15 +45,15 @@ FFV1 = Lorentz(name = 'FFV1',
                structure = 'Gamma(3,2,1)')
 
 
-#### this velocity dependence is working with MadGraph5, date Oct 15, 2017
+#### this velocity dependence is working with MadGraph5, date Oct 15, 2017, there is a factor of 2 missing in the numerator of the sqrt 
 #FFV1_mod = Lorentz(name = 'FFV1_mod',
                #spins = [ 2, 2, 3 ],
-               #structure = 'Gamma(3,2,1)*cmath.sqrt(1-4*pow(MMM,2)/(P(-1,1)*P(-1,3)))')
+               #structure = 'Gamma(3,2,1)*cmath.sqrt(1 - 2*pow(MMM,2)/ ( (P(1,1) + P(1,2))*(P(1,1) + P(1,2)) ) )')
 
 
 FFV1_mod = Lorentz(name = 'FFV1_mod',
                spins = [ 2, 2, 3 ],
-               structure = 'Gamma(3,2,1)*cmath.sqrt(1-4*pow(MMM,2)/(shat*shat))')
+               structure = 'Gamma(3,2,1)*mymdl_FormFactor(MMM)')
 
 
                
