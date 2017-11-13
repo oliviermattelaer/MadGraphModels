@@ -188,7 +188,7 @@ MTA = Parameter(name = 'MTA',
 MMM = Parameter(name = 'MMM',
                nature = 'external',
                type = 'real',
-               value = 1500,
+               value = 1500.0,
                texname = '\\text{MMM}',
                lhablock = 'MASS',
                lhacode = [ 4110000 ])
