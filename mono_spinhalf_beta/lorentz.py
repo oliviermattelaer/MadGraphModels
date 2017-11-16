@@ -53,7 +53,7 @@ FFV1 = Lorentz(name = 'FFV1',
 
 FFV1_mod = Lorentz(name = 'FFV1_mod',
                spins = [ 2, 2, 3 ],
-               structure = 'Gamma(3,2,1)*mymdl_FormFactor(MMM)') #
+               structure = 'mymdl_FormFactor(MMM)*Gamma(3,2,1)') #
 
 
 FFV2 = Lorentz(name = 'FFV2',
