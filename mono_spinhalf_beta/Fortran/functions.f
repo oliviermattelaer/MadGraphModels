@@ -14,7 +14,7 @@ c Momenta of particles in event, written by the user
       !mymdl_FormFactor = SQRT(SHAT)/(AAA-AAA+pp(0,2))
       mymdl_FormFactor = SQRT(1.0 - AAA*AAA/(PSQUARE+AAA*AAA))  ! beta = sqrt(1 - mass^2/energy^2)
       OUT = SQRT(1.0 - AAA*AAA/(PSQUARE+AAA*AAA))
-      !PRINT *, 'Form Factor:', OUT
+      PRINT *, 'Form Factor:', OUT
       
       RETURN
       END
